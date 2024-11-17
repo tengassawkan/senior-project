@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header styles */
+        .header img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            color: #6cc24a;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Product details */
+        .product-details {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .product-info h1,
+        .product-info h2,
+        .product-info p {
+            margin-bottom: 10px;
+        }
+
+        .product-info h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .product-info p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .color-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .color-options div {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .color-white {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+        }
+
+        .color-black {
+            background-color: #000000;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+        }
+
+        .btn-green {
+            background-color: #6cc24a;
+        }
+
+        .btn-red {
+            background-color: #ee5e58;
+        }
+
+        .product-image {
+            flex: 1;
+        }
+
+        .product-image img {
+            width: 100%;
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        .feature {
+            width: 30%;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Support and Contact */
+        .support-contact {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .support-contact div {
+            width: 45%;
+        }
+
+        .support-contact h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .support-contact p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .support-contact button {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="section header">
+            <img src="logo.png" alt="Logo">
+            <h2>PIYAPHOL FURNITURE</h2>
+        </div>
+
+        <!-- Product Details -->
+        <div class="section product-details">
+            <div class="product-info">
+                <h1>เตียง MALM รุ่น LOTUS</h1>
+                <h2>โครงเตียงสูงพร้อมกล่องเก็บของ 2 ใบ</h2>
+                <p>ขนาด 150 X 200 ซม.</p>
+                <div class="color-options">
+                    <span>เลือก สี</span>
+                    <div class="color-white"></div>
+                    <div class="color-black"></div>
+                </div>
+                <p>⭐️⭐️⭐️⭐️⭐️ (5.0) (1)</p>
+                <div class="buttons">
+                    <button class="btn-green">สนใจสินค้า</button>
+                    <button class="btn-red">จองการจอง</button>
+                </div>
+            </div>
+            <div class="product-image">
+                <img src="bed-image.jpg" alt="Bed Image">
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="section features">
+            <div class="feature">
+                <h3>DURABLE</h3>
+                <p>ทนทานต่อการสึกกร่อน ครบคู่สักงศ์ พร้อมใช้งานได้ยาวนานยิ่งขึ้น</p>
+            </div>
+            <div class="feature">
+                <h3>EFFORTLESS ASSEMBLY</h3>
+                <p>ติดตั้งง่ายและรวดเร็ว</p>
+            </div>
+            <div class="feature">
+                <h3>MINIMALIST AESTHETICS</h3>
+                <p>ครอบคลุมเพื่อรองงามให้ดู สะอาดตาและหรูรา</p>
+            </div>
+        </div>
+
+        <!-- Support and Contact -->
+        <div class="section support-contact">
+            <div>
+                <h3>SUPPORT</h3>
+                <p>ติดต่อสอบถามเรื่องอื่นๆ หรือรายงานปัญหาสินค้า การใช้งานและสินค้าได้ที่ช่องทาง LINE / FACEBOOK</p>
+            </div>
+            <div>
+                <h3>CONTACT</h3>
+                <p>สามารถติดต่อกับข่าวสารรวมเรื่องเกี่ยวกับเฟอร์นิเจอร์ได้ที่ บริษัท ปิยะพล เฟอร์นิเจอร์ จำกัด
+                    ได้เลยวันนี้ แล้วรับสิทธิพิเศษอีกมากมายที่เราจะเตรียมไว้ให้คุณตลอดปี พร้อมราคาพิเศษ</p>
+            </div>
+        </div>
+
+        <div class="section support">
+            <button>ติดต่อเรา</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
