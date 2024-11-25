@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyaphol Furniture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Piyaphol Furniture</h1>
+        <p>Get the best for your interior design.</p>
+        <button class="design-room-btn">
+            CONTACT US
+        </button>
+    </div>
+
+    <div class="categories">
+        <div class="category-item" data-category="table">
+            <i class="fas fa-chair"></i>
+            Table
+        </div>
+        <div class="category-item" data-category="sofa">
+            <i class="fas fa-couch"></i>
+            Sofa
+        </div>
+        <div class="category-item" data-category="dining-table">
+            <i class="fas fa-utensils"></i>
+            Dining Table
+        </div>
+        <div class="category-item active" data-category="bedroom-set">
+            <i class="fas fa-bed"></i>
+            Bedroom Set
+        </div>
+        <div class="category-item" data-category="cabinet">
+            <i class="fas fa-box"></i>
+            Cabinet
+        </div>
+    </div>
+
+    <div class="deals-section">
+        <div class="deal-header">
+            <h2>Brand</h2>
+            <div class="brand-logos">
+                <img src="/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/logo1.jpg"
+                    alt="Brand 1">
+                <img src="/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/logo2.jpg"
+                    alt="Brand 2">
+                <img src="/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/logo3.jpg"
+                    alt="Brand 3">
+                <img src="/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/logo4.png"
+                    alt="Brand 4">
+            </div>
+            <div class="best-deal">BEST DEAL</div>
+        </div>
+
+        <div class="deal-content">
+            <div class="discount-badge">50% OFF</div>
+            <div class="furniture-image">
+                <img src="example-furniture.png" alt="Furniture">
+            </div>
+        </div>
+
+        <div class="navigation-dots">
+            <span class="dot active" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categories = document.querySelectorAll('.category-item');
+            const furnitureImage = document.querySelector('.furniture-image img');
+            const discountBadge = document.querySelector('.discount-badge');
+            const dotsContainer = document.querySelector('.navigation-dots');
+
+            // Data for categories and their furniture
+            const dealsData = {
+                "table": [
+                    { discount: '15% OFF', img: '/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/table.jpg' },
+                ],
+                "sofa": [
+                    { discount: '25% OFF', img: '/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/sofa.jpg' },
+                ],
+                "dining-table": [
+                ],
+                "bedroom-set": [
+                    { discount: '50% OFF', img: '/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/bed.jpg' },
+                ],
+                "cabinet": [
+                ],
+            };
+
+            let currentCategory = "bedroom-set"; // Default category
+            let currentFurnitureIndex = 0;
+
+            // Function to update furniture content
+            const updateFurnitureContent = () => {
+                const furniture = dealsData[currentCategory][currentFurnitureIndex];
+                furnitureImage.src = furniture.img;
+                furnitureImage.alt = furniture.name || "Furniture Image";
+                discountBadge.textContent = furniture.discount;
+                updateDots();
+            };
+
+            // Function to dynamically update dots based on the number of items in the selected category
+            const updateDots = () => {
+                dotsContainer.innerHTML = ''; // Clear existing dots
+                const categoryData = dealsData[currentCategory];
+
+                categoryData.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.className = 'dot';
+                    if (index === currentFurnitureIndex) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', () => {
+                        currentFurnitureIndex = index; // Update index on dot click
+                        updateFurnitureContent(); // Update content
+                    });
+                    dotsContainer.appendChild(dot); // Append the dot
+                });
+            };
+
+            // Event listener for category selection
+            categories.forEach(category => {
+                category.addEventListener('click', () => {
+                    // Remove 'active' class from all categories
+                    categories.forEach(item => item.classList.remove('active'));
+
+                    // Add 'active' class to the clicked category
+                    category.classList.add('active');
+
+                    // Update the current category and reset furniture index
+                    currentCategory = category.getAttribute('data-category');
+                    currentFurnitureIndex = 0;
+
+                    // Update furniture content
+                    updateFurnitureContent();
+                });
+            });
+
+            // Initialize with the default category
+            updateFurnitureContent();
+        });
+    </script>
+    <script>
+
+    </script>
+    <script>
+        // Array of image URLs
+        const images = [
+            '/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/c479d7d3-aa62-4774-a634-1affeccf706a.webp',
+            '/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/7bb816ed-1a86-48c0-a229-8f31d5f640da.webp',
+        ];
+
+        // Get the header element
+        const header = document.querySelector('.header');
+
+        // Set the initial index
+        let index = 0;
+
+        // Function to change the background image with animation
+        function changeBackground() {
+            // Add fade-out effect
+            header.classList.add('hidden');
+
+            // Wait for the fade-out to complete before changing the background
+            setTimeout(() => {
+                // Update the background image
+                header.style.backgroundImage = `url('${images[index]}')`;
+
+                // Remove the fade-out effect and add fade-in
+                header.classList.remove('hidden');
+
+                // Move to the next image, looping back to the start
+                index = (index + 1) % images.length;
+            }, 500); // Match the duration of the fade-out transition
+        }
+
+        // Change the background every 5 seconds
+        setInterval(changeBackground, 5000);
+
+        // Initial call to set the first image
+        changeBackground();
+    </script>
+
+</html>

@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, redirect
 import psycopg2
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="frontend")
 
 # Configure your PostgreSQL database connection
 db_config = {
@@ -18,9 +18,16 @@ def get_db_connection():
     return psycopg2.connect(**db_config)
 
 
-@app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
+
+
+@app.route("/product")
+def product():
+    return render_template(
+        "product_page/product.html"
+    )  # Adjust path within frontend
 
 
 @app.route("/insert", methods=["POST"])

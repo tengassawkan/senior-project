@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyaphol Furniture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="logo">
+            <b>Piyaphol Furniture</b>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="product-section">
+            <div class="product-info">
+                <h1>เตียง MALM รุ่น LOTUS</h1>
+                <p>โครงเตียงสูงพร้อมกล่องเก็บของ 2 ใบ</p>
+                <p>ขนาด <strong>150 X 200 ซม.</strong></p>
+                <div class="color-selection">
+                    <label>เลือก สี:</label>
+                    <div class="color-selection">
+                        <label>เลือก สี:</label>
+                        <span class="color-option" data-color="example-furniture-black.png"
+                            style="background-color: black;"></span>
+                        <span class="color-option" data-color="example-furniture-white.png"
+                            style="background-color: white; border: 1px solid #ccc;"></span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <span class="stars">★★★★★</span> <span>(5.0)</span>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-green">สนใจสินค้า</button>
+                    <button class="btn btn-red" onclick="navigateToAR()">จองการวาง</button>
+                </div>
+            </div>
+            <div class="product-image">
+                <img src="/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/assets/bed.jpg"
+                    alt="Furniture">
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <h3>Durable</h3>
+                <p>ทนทานต่อการใช้งานพร้อมดีไซน์เพื่อการใช้งานที่มั่นคง</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-tools"></i>
+                <h3>Effortless Assembly</h3>
+                <p>ติดตั้งง่ายและรวดเร็ว</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Minimalist Aesthetics</h3>
+                <p>การออกแบบที่ลงตัวเพื่อสอดคล้องกับสไตล์ห้องพัก</p>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <div class="support-info">
+                <h3>Support</h3>
+                <p>ติดต่อสอบถามเรื่องอื่นๆ หรือรายงานปัญหา ได้ผ่าน LINE/FACEBOOK</p>
+            </div>
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <p>ติดตามข่าวสารและผลิตภัณฑ์เพิ่มเติมได้ที่...</p>
+                <button class="btn btn-black">ติดต่อเรา</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    </footer>
+</body>
+<script>
+    const navigateToAR = () => {
+        window.location.href = "/Users/apirayakanchanaleartporntawee/Desktop/Projects/Personal/Teng/senior-project/frontend/ar/ar.html";
+    };
+</script>
+
+</html>
